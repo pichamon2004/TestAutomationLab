@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.9.6 on darwin)" generated="2026-01-02T23:06:24.710027" rpa="false" schemaversion="5">
+<suite id="s1" name="Lab4 Test" source="/Users/thitikorn/Desktop/oodo/CP353004/TestAutomationLab/lab4_test.robot">
+<test id="s1-t1" name="UAT-Lab04-001-TC01: Register Success" line="12">
+<kw name="Open Chrome Browser">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-02T23:06:24.768044" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x1092dcdc0&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-02T23:06:24.767840" elapsed="0.000220"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-01-02T23:06:24.768234" level="INFO">${chrome_options.binary_location} = /Users/thitikorn/Desktop/oodo/CP353004/SetupLAB4/ChromeForTesting/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing</msg>
+<var>${chrome_options.binary_location}</var>
+<arg>${CHROME_BROWSER_PATH}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-01-02T23:06:24.768119" elapsed="0.000126"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-02T23:06:24.768472" level="INFO">${service} = &lt;selenium.webdriver.chrome.service.Service object at 0x1092dce50&gt;</msg>
+<var>${service}</var>
+<arg>sys.modules["selenium.webdriver.chrome.service"].Service(executable_path=r"${CHROME_DRIVER_PATH}")</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-02T23:06:24.768285" elapsed="0.000199"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:24.768612" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<arg>service=${service}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2026-01-02T23:06:24.768527" elapsed="0.357410"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:25.126434" level="INFO">Opening url 'http://localhost:7272/Lab4/Registration.html'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-01-02T23:06:25.126262" elapsed="0.020707"/>
+</kw>
+<status status="PASS" start="2026-01-02T23:06:24.767567" elapsed="0.379617"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:25.148097" level="INFO">Typing text 'Somyod' into text field 'id=firstname'.</msg>
+<arg>id=firstname</arg>
+<arg>Somyod</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:25.147460" elapsed="0.061164"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:25.208978" level="INFO">Typing text 'Sodsai' into text field 'id=lastname'.</msg>
+<arg>id=lastname</arg>
+<arg>Sodsai</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:25.208821" elapsed="0.032056"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:25.241130" level="INFO">Typing text 'CS KKU' into text field 'id=organization'.</msg>
+<arg>id=organization</arg>
+<arg>CS KKU</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:25.241015" elapsed="0.022815"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:25.264298" level="INFO">Typing text 'somyod@kkumail.com' into text field 'id=email'.</msg>
+<arg>id=email</arg>
+<arg>somyod@kkumail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:25.264139" elapsed="0.022791"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:25.287183" level="INFO">Typing text '091-001-1234' into text field 'id=phone'.</msg>
+<arg>id=phone</arg>
+<arg>091-001-1234</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:25.287072" elapsed="0.021900"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:25.309255" level="INFO">Clicking button 'id=registerButton'.</msg>
+<arg>id=registerButton</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:25.309127" elapsed="0.039264"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-02T23:06:27.350943" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-02T23:06:25.348540" elapsed="2.002778"/>
+</kw>
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:27.357206" level="INFO">Current location contains 'Success.html'.</msg>
+<arg>Success.html</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-01-02T23:06:27.351958" elapsed="0.005387"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:27.360594" level="INFO">Page title is 'Success'.</msg>
+<arg>Success</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2026-01-02T23:06:27.357706" elapsed="0.002989"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:27.375269" level="INFO">Current page contains text 'Thank you for registering with us.'.</msg>
+<arg>Thank you for registering with us.</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-01-02T23:06:27.360929" elapsed="0.014451"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:27.382461" level="INFO">Current page contains text 'We will send a confirmation to your email soon.'.</msg>
+<arg>We will send a confirmation to your email soon.</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-01-02T23:06:27.375602" elapsed="0.006932"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-02T23:06:27.382671" elapsed="0.069102"/>
+</kw>
+<status status="PASS" start="2026-01-02T23:06:24.767286" elapsed="2.684715"/>
+</test>
+<test id="s1-t2" name="UAT-Lab04-001-TC02: Register Success No Organization" line="27">
+<kw name="Open Chrome Browser">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-02T23:06:27.452907" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x109386fd0&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-02T23:06:27.452613" elapsed="0.000314"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-01-02T23:06:27.453184" level="INFO">${chrome_options.binary_location} = /Users/thitikorn/Desktop/oodo/CP353004/SetupLAB4/ChromeForTesting/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing</msg>
+<var>${chrome_options.binary_location}</var>
+<arg>${CHROME_BROWSER_PATH}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-01-02T23:06:27.452995" elapsed="0.000205"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-02T23:06:27.453492" level="INFO">${service} = &lt;selenium.webdriver.chrome.service.Service object at 0x109386dc0&gt;</msg>
+<var>${service}</var>
+<arg>sys.modules["selenium.webdriver.chrome.service"].Service(executable_path=r"${CHROME_DRIVER_PATH}")</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-02T23:06:27.453253" elapsed="0.000260"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:27.453848" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<arg>service=${service}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2026-01-02T23:06:27.453729" elapsed="0.349287"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:27.803376" level="INFO">Opening url 'http://localhost:7272/Lab4/Registration.html'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-01-02T23:06:27.803241" elapsed="0.042148"/>
+</kw>
+<status status="PASS" start="2026-01-02T23:06:27.452449" elapsed="0.393087"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:27.845935" level="INFO">Typing text 'Somyod' into text field 'id=firstname'.</msg>
+<arg>id=firstname</arg>
+<arg>Somyod</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:27.845743" elapsed="0.060942"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:27.906994" level="INFO">Typing text 'Sodsai' into text field 'id=lastname'.</msg>
+<arg>id=lastname</arg>
+<arg>Sodsai</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:27.906850" elapsed="0.022671"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:27.929771" level="INFO">Typing text 'somyod@kkumail.com' into text field 'id=email'.</msg>
+<arg>id=email</arg>
+<arg>somyod@kkumail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:27.929658" elapsed="0.023544"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:27.953455" level="INFO">Typing text '091-001-1234' into text field 'id=phone'.</msg>
+<arg>id=phone</arg>
+<arg>091-001-1234</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:27.953345" elapsed="0.019544"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:27.973195" level="INFO">Clicking button 'id=registerButton'.</msg>
+<arg>id=registerButton</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:27.973057" elapsed="0.032209"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-02T23:06:30.006052" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-02T23:06:28.005490" elapsed="2.000707"/>
+</kw>
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:30.009891" level="INFO">Current location contains 'Success.html'.</msg>
+<arg>Success.html</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-01-02T23:06:30.006472" elapsed="0.003493"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:30.012718" level="INFO">Page title is 'Success'.</msg>
+<arg>Success</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2026-01-02T23:06:30.010137" elapsed="0.002642"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:30.019774" level="INFO">Current page contains text 'Thank you for registering with us.'.</msg>
+<arg>Thank you for registering with us.</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-01-02T23:06:30.012930" elapsed="0.006888"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:30.025483" level="INFO">Current page contains text 'We will send a confirmation to your email soon.'.</msg>
+<arg>We will send a confirmation to your email soon.</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-01-02T23:06:30.019923" elapsed="0.005609"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-02T23:06:30.025640" elapsed="0.065532"/>
+</kw>
+<status status="PASS" start="2026-01-02T23:06:27.452167" elapsed="2.639152"/>
+</test>
+<test id="s1-t3" name="UAT-Lab04-002-TC01: Empty First Name" line="41">
+<kw name="Open Chrome Browser">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-02T23:06:30.092185" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x1093a1160&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-02T23:06:30.091840" elapsed="0.000365"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-01-02T23:06:30.092519" level="INFO">${chrome_options.binary_location} = /Users/thitikorn/Desktop/oodo/CP353004/SetupLAB4/ChromeForTesting/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing</msg>
+<var>${chrome_options.binary_location}</var>
+<arg>${CHROME_BROWSER_PATH}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-01-02T23:06:30.092271" elapsed="0.000268"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-02T23:06:30.092860" level="INFO">${service} = &lt;selenium.webdriver.chrome.service.Service object at 0x10939a940&gt;</msg>
+<var>${service}</var>
+<arg>sys.modules["selenium.webdriver.chrome.service"].Service(executable_path=r"${CHROME_DRIVER_PATH}")</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-02T23:06:30.092608" elapsed="0.000270"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:30.093057" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<arg>service=${service}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2026-01-02T23:06:30.092945" elapsed="0.340442"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:30.434296" level="INFO">Opening url 'http://localhost:7272/Lab4/Registration.html'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-01-02T23:06:30.433914" elapsed="0.046223"/>
+</kw>
+<status status="PASS" start="2026-01-02T23:06:30.091669" elapsed="0.388603"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:30.481185" level="INFO">Typing text 'Sodyod' into text field 'id=lastname'.</msg>
+<arg>id=lastname</arg>
+<arg>Sodyod</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:30.480528" elapsed="0.046656"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:30.527491" level="INFO">Typing text 'CS KKU' into text field 'id=organization'.</msg>
+<arg>id=organization</arg>
+<arg>CS KKU</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:30.527351" elapsed="0.022661"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:30.550309" level="INFO">Typing text 'somyod@kkumail.com' into text field 'id=email'.</msg>
+<arg>id=email</arg>
+<arg>somyod@kkumail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:30.550180" elapsed="0.027764"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:30.578270" level="INFO">Typing text '091-001-1234' into text field 'id=phone'.</msg>
+<arg>id=phone</arg>
+<arg>091-001-1234</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:30.578096" elapsed="0.019879"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:30.598227" level="INFO">Clicking button 'id=registerButton'.</msg>
+<arg>id=registerButton</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:30.598112" elapsed="0.026642"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-02T23:06:32.626854" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-02T23:06:30.624890" elapsed="2.002091"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:32.630414" level="INFO">Current location is 'http://localhost:7272/Lab4/Registration.html'.</msg>
+<arg>${URL}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2026-01-02T23:06:32.627206" elapsed="0.003275"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:32.637388" level="INFO">Current page contains text 'Please enter your first name!!'.</msg>
+<arg>Please enter your first name!!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-01-02T23:06:32.630633" elapsed="0.006833"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-02T23:06:32.637612" elapsed="0.070466"/>
+</kw>
+<status status="PASS" start="2026-01-02T23:06:30.091441" elapsed="2.616820"/>
+</test>
+<test id="s1-t4" name="UAT-Lab04-002-TC02: Empty Last Name" line="53">
+<kw name="Open Chrome Browser">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-02T23:06:32.709024" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x1093aa5b0&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-02T23:06:32.708778" elapsed="0.000266"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-01-02T23:06:32.709259" level="INFO">${chrome_options.binary_location} = /Users/thitikorn/Desktop/oodo/CP353004/SetupLAB4/ChromeForTesting/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing</msg>
+<var>${chrome_options.binary_location}</var>
+<arg>${CHROME_BROWSER_PATH}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-01-02T23:06:32.709107" elapsed="0.000167"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-02T23:06:32.709542" level="INFO">${service} = &lt;selenium.webdriver.chrome.service.Service object at 0x1093aa8e0&gt;</msg>
+<var>${service}</var>
+<arg>sys.modules["selenium.webdriver.chrome.service"].Service(executable_path=r"${CHROME_DRIVER_PATH}")</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-02T23:06:32.709328" elapsed="0.000229"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:32.709733" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<arg>service=${service}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2026-01-02T23:06:32.709620" elapsed="0.341157"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:33.051245" level="INFO">Opening url 'http://localhost:7272/Lab4/Registration.html'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-01-02T23:06:33.051006" elapsed="0.016285"/>
+</kw>
+<status status="PASS" start="2026-01-02T23:06:32.708633" elapsed="0.358808"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:33.067898" level="INFO">Typing text 'Somyod' into text field 'id=firstname'.</msg>
+<arg>id=firstname</arg>
+<arg>Somyod</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:33.067660" elapsed="0.052134"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:33.120123" level="INFO">Typing text 'CS KKU' into text field 'id=organization'.</msg>
+<arg>id=organization</arg>
+<arg>CS KKU</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:33.119949" elapsed="0.032252"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:33.152443" level="INFO">Typing text 'somyod@kkumail.com' into text field 'id=email'.</msg>
+<arg>id=email</arg>
+<arg>somyod@kkumail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:33.152333" elapsed="0.025488"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:33.178076" level="INFO">Typing text '091-001-1234' into text field 'id=phone'.</msg>
+<arg>id=phone</arg>
+<arg>091-001-1234</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:33.177960" elapsed="0.021344"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:33.199561" level="INFO">Clicking button 'id=registerButton'.</msg>
+<arg>id=registerButton</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:33.199445" elapsed="0.024400"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-02T23:06:35.226200" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-02T23:06:33.223983" elapsed="2.002350"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:35.229993" level="INFO">Current location is 'http://localhost:7272/Lab4/Registration.html'.</msg>
+<arg>${URL}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2026-01-02T23:06:35.226578" elapsed="0.003491"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:35.237445" level="INFO">Current page contains text 'Please enter your last name!!'.</msg>
+<arg>Please enter your last name!!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-01-02T23:06:35.230243" elapsed="0.007253"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-02T23:06:35.237640" elapsed="0.070068"/>
+</kw>
+<status status="PASS" start="2026-01-02T23:06:32.708389" elapsed="2.599505"/>
+</test>
+<test id="s1-t5" name="UAT-Lab04-002-TC03: Empty First Name and Last Name" line="65">
+<kw name="Open Chrome Browser">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-02T23:06:35.308661" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x1093864f0&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-02T23:06:35.308409" elapsed="0.000270"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-01-02T23:06:35.308903" level="INFO">${chrome_options.binary_location} = /Users/thitikorn/Desktop/oodo/CP353004/SetupLAB4/ChromeForTesting/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing</msg>
+<var>${chrome_options.binary_location}</var>
+<arg>${CHROME_BROWSER_PATH}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-01-02T23:06:35.308741" elapsed="0.000177"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-02T23:06:35.309225" level="INFO">${service} = &lt;selenium.webdriver.chrome.service.Service object at 0x1093867c0&gt;</msg>
+<var>${service}</var>
+<arg>sys.modules["selenium.webdriver.chrome.service"].Service(executable_path=r"${CHROME_DRIVER_PATH}")</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-02T23:06:35.309001" elapsed="0.000239"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:35.309411" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<arg>service=${service}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2026-01-02T23:06:35.309300" elapsed="0.331957"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:35.641621" level="INFO">Opening url 'http://localhost:7272/Lab4/Registration.html'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-01-02T23:06:35.641483" elapsed="0.046295"/>
+</kw>
+<status status="PASS" start="2026-01-02T23:06:35.308264" elapsed="0.379610"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:35.688154" level="INFO">Typing text 'CS KKU' into text field 'id=organization'.</msg>
+<arg>id=organization</arg>
+<arg>CS KKU</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:35.687994" elapsed="0.052234"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:35.740509" level="INFO">Typing text 'somyod@kkumail.com' into text field 'id=email'.</msg>
+<arg>id=email</arg>
+<arg>somyod@kkumail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:35.740381" elapsed="0.024650"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:35.765292" level="INFO">Typing text '091-001-1234' into text field 'id=phone'.</msg>
+<arg>id=phone</arg>
+<arg>091-001-1234</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:35.765176" elapsed="0.022329"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:35.787765" level="INFO">Clicking button 'id=registerButton'.</msg>
+<arg>id=registerButton</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:35.787647" elapsed="0.026857"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-02T23:06:37.816219" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-02T23:06:35.814780" elapsed="2.001562"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:37.819371" level="INFO">Current location is 'http://localhost:7272/Lab4/Registration.html'.</msg>
+<arg>${URL}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2026-01-02T23:06:37.816556" elapsed="0.002875"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:37.826037" level="INFO">Current page contains text 'Please enter your name!!'.</msg>
+<arg>Please enter your name!!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-01-02T23:06:37.819576" elapsed="0.006508"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-02T23:06:37.826195" elapsed="0.069783"/>
+</kw>
+<status status="PASS" start="2026-01-02T23:06:35.308026" elapsed="2.588153"/>
+</test>
+<test id="s1-t6" name="UAT-Lab04-002-TC04: Empty Email" line="76">
+<kw name="Open Chrome Browser">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-02T23:06:37.896956" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x1093b4b80&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-02T23:06:37.896701" elapsed="0.000274"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-01-02T23:06:37.897190" level="INFO">${chrome_options.binary_location} = /Users/thitikorn/Desktop/oodo/CP353004/SetupLAB4/ChromeForTesting/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing</msg>
+<var>${chrome_options.binary_location}</var>
+<arg>${CHROME_BROWSER_PATH}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-01-02T23:06:37.897038" elapsed="0.000167"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-02T23:06:37.897473" level="INFO">${service} = &lt;selenium.webdriver.chrome.service.Service object at 0x1093b4eb0&gt;</msg>
+<var>${service}</var>
+<arg>sys.modules["selenium.webdriver.chrome.service"].Service(executable_path=r"${CHROME_DRIVER_PATH}")</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-02T23:06:37.897256" elapsed="0.000232"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:37.897659" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<arg>service=${service}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2026-01-02T23:06:37.897551" elapsed="0.337302"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:38.235241" level="INFO">Opening url 'http://localhost:7272/Lab4/Registration.html'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-01-02T23:06:38.235094" elapsed="0.044936"/>
+</kw>
+<status status="PASS" start="2026-01-02T23:06:37.896551" elapsed="0.383567"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:38.280514" level="INFO">Typing text 'Somyod' into text field 'id=firstname'.</msg>
+<arg>id=firstname</arg>
+<arg>Somyod</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:38.280310" elapsed="0.053241"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:38.333820" level="INFO">Typing text 'Sodsai' into text field 'id=lastname'.</msg>
+<arg>id=lastname</arg>
+<arg>Sodsai</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:38.333698" elapsed="0.023986"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:38.357936" level="INFO">Typing text 'CS KKU' into text field 'id=organization'.</msg>
+<arg>id=organization</arg>
+<arg>CS KKU</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:38.357825" elapsed="0.020433"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:38.378516" level="INFO">Typing text '091-001-1234' into text field 'id=phone'.</msg>
+<arg>id=phone</arg>
+<arg>091-001-1234</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:38.378397" elapsed="0.019799"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:38.398464" level="INFO">Clicking button 'id=registerButton'.</msg>
+<arg>id=registerButton</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:38.398341" elapsed="0.022545"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-02T23:06:40.423345" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-02T23:06:38.421050" elapsed="2.002419"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:40.426700" level="INFO">Current location is 'http://localhost:7272/Lab4/Registration.html'.</msg>
+<arg>${URL}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2026-01-02T23:06:40.423691" elapsed="0.003073"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:40.433803" level="INFO">Current page contains text 'Please enter your email!!'.</msg>
+<arg>Please enter your email!!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-01-02T23:06:40.426908" elapsed="0.006944"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-02T23:06:40.433986" elapsed="0.065726"/>
+</kw>
+<status status="PASS" start="2026-01-02T23:06:37.896316" elapsed="2.603551"/>
+</test>
+<test id="s1-t7" name="UAT-Lab04-002-TC05: Empty Phone Number" line="88">
+<kw name="Open Chrome Browser">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-02T23:06:40.500627" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x10931f520&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-02T23:06:40.500383" elapsed="0.000264"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-01-02T23:06:40.500895" level="INFO">${chrome_options.binary_location} = /Users/thitikorn/Desktop/oodo/CP353004/SetupLAB4/ChromeForTesting/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing</msg>
+<var>${chrome_options.binary_location}</var>
+<arg>${CHROME_BROWSER_PATH}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-01-02T23:06:40.500713" elapsed="0.000199"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-02T23:06:40.501170" level="INFO">${service} = &lt;selenium.webdriver.chrome.service.Service object at 0x1093aa310&gt;</msg>
+<var>${service}</var>
+<arg>sys.modules["selenium.webdriver.chrome.service"].Service(executable_path=r"${CHROME_DRIVER_PATH}")</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-02T23:06:40.500963" elapsed="0.000222"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:40.501355" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<arg>service=${service}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2026-01-02T23:06:40.501248" elapsed="0.315951"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:40.817807" level="INFO">Opening url 'http://localhost:7272/Lab4/Registration.html'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-01-02T23:06:40.817648" elapsed="0.014354"/>
+</kw>
+<status status="PASS" start="2026-01-02T23:06:40.500212" elapsed="0.331996"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:40.832906" level="INFO">Typing text 'Somyod' into text field 'id=firstname'.</msg>
+<arg>id=firstname</arg>
+<arg>Somyod</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:40.832399" elapsed="0.052412"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:40.885101" level="INFO">Typing text 'Sodsai' into text field 'id=lastname'.</msg>
+<arg>id=lastname</arg>
+<arg>Sodsai</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:40.884966" elapsed="0.031192"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:40.916430" level="INFO">Typing text 'CS KKU' into text field 'id=organization'.</msg>
+<arg>id=organization</arg>
+<arg>CS KKU</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:40.916308" elapsed="0.023122"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:40.939759" level="INFO">Typing text 'somyod@kkumail.com' into text field 'id=email'.</msg>
+<arg>id=email</arg>
+<arg>somyod@kkumail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:40.939623" elapsed="0.022669"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:40.962552" level="INFO">Clicking button 'id=registerButton'.</msg>
+<arg>id=registerButton</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:40.962436" elapsed="0.023225"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-02T23:06:42.986243" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-02T23:06:40.985840" elapsed="2.000594"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:42.990065" level="INFO">Current location is 'http://localhost:7272/Lab4/Registration.html'.</msg>
+<arg>${URL}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2026-01-02T23:06:42.986686" elapsed="0.003446"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:42.997380" level="INFO">Current page contains text 'Please enter your phone number!!'.</msg>
+<arg>Please enter your phone number!!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-01-02T23:06:42.990285" elapsed="0.007143"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-02T23:06:42.997563" elapsed="0.066799"/>
+</kw>
+<status status="PASS" start="2026-01-02T23:06:40.499988" elapsed="2.564589"/>
+</test>
+<test id="s1-t8" name="UAT-Lab04-002-TC06: Invalid Phone Number" line="100">
+<kw name="Open Chrome Browser">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-02T23:06:43.065321" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x1093bdfd0&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-02T23:06:43.065084" elapsed="0.000255"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-01-02T23:06:43.065551" level="INFO">${chrome_options.binary_location} = /Users/thitikorn/Desktop/oodo/CP353004/SetupLAB4/ChromeForTesting/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing</msg>
+<var>${chrome_options.binary_location}</var>
+<arg>${CHROME_BROWSER_PATH}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-01-02T23:06:43.065404" elapsed="0.000162"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-02T23:06:43.065823" level="INFO">${service} = &lt;selenium.webdriver.chrome.service.Service object at 0x1093bdd30&gt;</msg>
+<var>${service}</var>
+<arg>sys.modules["selenium.webdriver.chrome.service"].Service(executable_path=r"${CHROME_DRIVER_PATH}")</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-02T23:06:43.065618" elapsed="0.000220"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:43.066128" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<arg>service=${service}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2026-01-02T23:06:43.065932" elapsed="0.355293"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:43.421649" level="INFO">Opening url 'http://localhost:7272/Lab4/Registration.html'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-01-02T23:06:43.421483" elapsed="0.044670"/>
+</kw>
+<status status="PASS" start="2026-01-02T23:06:43.064936" elapsed="0.401347"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:43.466767" level="INFO">Typing text 'Somyod' into text field 'id=firstname'.</msg>
+<arg>id=firstname</arg>
+<arg>Somyod</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:43.466540" elapsed="0.050155"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:43.516958" level="INFO">Typing text 'Sodsai' into text field 'id=lastname'.</msg>
+<arg>id=lastname</arg>
+<arg>Sodsai</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:43.516835" elapsed="0.024143"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:43.541225" level="INFO">Typing text 'CS KKU' into text field 'id=organization'.</msg>
+<arg>id=organization</arg>
+<arg>CS KKU</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:43.541115" elapsed="0.020685"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:43.562069" level="INFO">Typing text 'somyod@kkumail.com' into text field 'id=email'.</msg>
+<arg>id=email</arg>
+<arg>somyod@kkumail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:43.561948" elapsed="0.021169"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:43.583365" level="INFO">Typing text '1234' into text field 'id=phone'.</msg>
+<arg>id=phone</arg>
+<arg>1234</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:43.583253" elapsed="0.018615"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:43.602114" level="INFO">Clicking button 'id=registerButton'.</msg>
+<arg>id=registerButton</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:06:43.602003" elapsed="0.022894"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-02T23:06:45.626219" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-02T23:06:43.625034" elapsed="2.001325"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:45.629913" level="INFO">Current location is 'http://localhost:7272/Lab4/Registration.html'.</msg>
+<arg>${URL}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2026-01-02T23:06:45.626628" elapsed="0.003362"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:06:45.714917" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-01-02T23:06:45.715019" level="FAIL">Page should have contained text 'Please enter a valid phone number, e.g., 081-234-5678, 081 234 5678, or 081.234.5678)' but did not.</msg>
+<arg>Please enter a valid phone number, e.g., 081-234-5678, 081 234 5678, or 081.234.5678)</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="FAIL" start="2026-01-02T23:06:45.630180" elapsed="0.086959">Page should have contained text 'Please enter a valid phone number, e.g., 081-234-5678, 081 234 5678, or 081.234.5678)' but did not.</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2026-01-02T23:06:45.717256" elapsed="0.000018"/>
+</kw>
+<status status="FAIL" start="2026-01-02T23:06:43.064705" elapsed="2.652656">Page should have contained text 'Please enter a valid phone number, e.g., 081-234-5678, 081 234 5678, or 081.234.5678)' but did not.</status>
+</test>
+<status status="FAIL" start="2026-01-02T23:06:24.710511" elapsed="21.007057"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Lab4 Test" id="s1" pass="7" fail="1" skip="0">Lab4 Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
